@@ -11,9 +11,13 @@ int main()
 	bucketQueue.insert(2);
 	bucketQueue.insert(2);
 
-	std::cout << bucketQueue.deleteMin() << std::endl;
-	std::cout << bucketQueue.deleteMin() << std::endl;
-	std::cout << bucketQueue.deleteMin() << std::endl;
+	bucketQueue.print();
+
+	std::cout << "Deleted Min: " << bucketQueue.deleteMin() << std::endl;
+	std::cout << "Deleted Min: " << bucketQueue.deleteMin() << std::endl;
+	std::cout << "Deleted Min: " << bucketQueue.deleteMin() << std::endl;
+
+	std::cout << std::endl;
 
 	bucketQueue.print();
 }

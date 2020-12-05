@@ -1,6 +1,8 @@
 
 #include "BucketQueue.h"
 #include <assert.h>
+#include <iostream>
+#include <iomanip>
 
 BucketQueue::BucketQueue(int _size) : MonotoneIntegerPriorityQueue(_size) {}
 
@@ -57,9 +59,18 @@ void BucketQueue::decreaseKey(int key, int value)
 
 void BucketQueue::print()
 {
-	int currIndex = minIndex++;
+	std::cout << "Queue Size: " << size << std::endl;
+	std::cout << "-----------------------------------" << std::endl;
 
-
-	while (currIndex != minIndex);
-
+	for(int i = 0; i < queue.size(); i++)
+	{
+		std::cout << "Bucket " << i << ": ";
+		for (int key : queue.at(i))
+			std::cout << key << " ";
+		if (i == minIndex)
+			std::cout << "<-- minPtr";
+		std::cout << std::endl;
+	}
+	std::cout << "-----------------------------------" << std::endl;
+	std::cout << std::endl;
 }
