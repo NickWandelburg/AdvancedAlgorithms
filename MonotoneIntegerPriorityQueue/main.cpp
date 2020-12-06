@@ -10,6 +10,9 @@ int main()
 	bucketQueue.insert(1);
 	bucketQueue.insert(2);
 	bucketQueue.insert(2);
+	bucketQueue.insert(9);
+
+	bucketQueue.decreaseKey(9, 3);
 
 	bucketQueue.print();
 
