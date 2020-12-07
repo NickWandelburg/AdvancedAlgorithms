@@ -10,9 +10,13 @@ int main()
 	bucketQueue.insert(1);
 	bucketQueue.insert(2);
 	bucketQueue.insert(2);
-	bucketQueue.insert(9);
+	bucketQueue.insert(10);
 
-	bucketQueue.decreaseKey(9, 3);
+	bucketQueue.print();
+
+	std::cout << "Decrease Key 10 -> 3\n" << std::endl;
+
+	bucketQueue.decreaseKey(10, 3);
 
 	bucketQueue.print();
 

@@ -42,10 +42,10 @@ int BucketQueue::deleteMin()
 
 void BucketQueue::insert(int key)
 {
-	int index = key % (size + 1);
+	int index = key % size;
 
 	if (queue.at(minIndex).size() != 0)
-		assert(key < size);
+		assert(key < queue.at(minIndex).front() + size);
 	else
 		minIndex = index;
 
@@ -55,16 +55,16 @@ void BucketQueue::insert(int key)
 
 void BucketQueue::decreaseKey(int key, int value)
 {
-	assert(key < size);
+	assert(key < queue.at(minIndex).front() + size);
 	assert(value >= queue.at(minIndex).front());
 	
-	int keyIndex = key % (size + 1);
+	int keyIndex = key % size;
 	
 	assert(queue.at(keyIndex).size() != 0);
 
 	queue.at(keyIndex).erase(queue.at(keyIndex).begin());
 
-	int valueIndex = value % (size + 1);
+	int valueIndex = value % size;
 
 	queue.at(valueIndex).push_back(value);
 }
